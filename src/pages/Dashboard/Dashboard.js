@@ -37,7 +37,7 @@ const Dashboard = () => {
 
 	const getData = () => {
 		axios
-			.get('http://localhost:5000/api/orders/count')
+			.get('http://108.165.213.119:5000/api/orders/count')
 			.then(res => {
 				setOrdersToday(res.data.ordersToday)
 				setOrdersActive(res.data.ordersActive)
@@ -49,7 +49,7 @@ const Dashboard = () => {
 			})
 
 		axios
-			.get('http://localhost:5000/api/orders/stats')
+			.get('http://108.165.213.119:5000/api/orders/stats')
 			.then(res => {
 				setData(res.data)
 			})

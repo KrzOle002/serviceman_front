@@ -26,7 +26,7 @@ const OrdersPage = () => {
 
 	const getOrders = () => {
 		axios
-			.get('http://localhost:5000/api/orders')
+			.get('http://108.165.213.119:5000/api/orders')
 			.then(res => {
 				setOrders(res.data)
 				setOrdering(res.data)
@@ -40,7 +40,7 @@ const OrdersPage = () => {
 
 	const getChangedOrders = () => {
 		axios
-			.get('http://localhost:5000/api/orders')
+			.get('http://108.165.213.119:5000/api/orders')
 			.then(res => {
 				setOrdering(res.data)
 				checkFilters(res.data)

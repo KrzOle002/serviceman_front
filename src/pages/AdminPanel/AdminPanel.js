@@ -23,7 +23,7 @@ const AdminPanel = () => {
 			password: data.newPassword,
 		}
 		axios
-			.post('http://localhost:5000/api/passwd', company)
+			.post('http://108.165.213.119:5000/api/passwd', company)
 			.then(res => {
 				toast.success('Hasło zmienione')
 				setSelected(false)

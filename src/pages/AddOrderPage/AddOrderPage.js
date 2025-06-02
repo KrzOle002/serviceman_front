@@ -35,9 +35,9 @@ const AddOrderPage = () => {
 
 	const printPdf = orderId => {
 		axios
-			.post(`https://108.165.213.119:5000/api/generatepdf/${orderId}`, {})
+			.post(`http://localhost:5000/api/generatepdf/${orderId}`, {})
 			.then(() =>
-				axios.get(`https://108.165.213.119:5000/api/sendpdf/${orderId}`, {
+				axios.get(`http://localhost:5000/api/sendpdf/${orderId}`, {
 					responseType: 'blob',
 				})
 			)
@@ -52,7 +52,7 @@ const AddOrderPage = () => {
 		setWorking(true)
 		let orderId
 		await axios
-			.post('https://108.165.213.119:5000/api/order', data)
+			.post('http://localhost:5000/api/order', data)
 			.then(res => {
 				toast.success('Dodano zlecenie')
 				orderId = res.data.newOrder._id

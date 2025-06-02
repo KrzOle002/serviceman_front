@@ -23,7 +23,7 @@ const OrderDetails = ({ handleChangeOpen, activeOrder, setOrders, orders }) => {
 	const removeOrder = async e => {
 		e.preventDefault()
 		await axios
-			.delete(`https://108.165.213.119:5000/api/order/${activeOrder}`)
+			.delete(`http://localhost:5000/api/order/${activeOrder}`)
 			.then(res => {
 				let newOrders = orders.filter(item => item._id !== activeOrder)
 				setOrders(newOrders)
@@ -39,7 +39,7 @@ const OrderDetails = ({ handleChangeOpen, activeOrder, setOrders, orders }) => {
 
 	const updateOrder = async data => {
 		await axios
-			.post(`https://108.165.213.119:5000/api/order/${activeOrder}`, data)
+			.post(`http://localhost:5000/api/order/${activeOrder}`, data)
 			.then(res => {
 				setSaving(true)
 				handleChangeOpen()
@@ -54,7 +54,7 @@ const OrderDetails = ({ handleChangeOpen, activeOrder, setOrders, orders }) => {
 	const finishOrder = async e => {
 		e.preventDefault()
 		await axios
-			.post(`https://108.165.213.119:5000/api/order/finish/${activeOrder}`)
+			.post(`http://localhost:5000/api/order/finish/${activeOrder}`)
 			.then(res => {
 				setClosing(true)
 				handleChangeOpen()
@@ -69,7 +69,7 @@ const OrderDetails = ({ handleChangeOpen, activeOrder, setOrders, orders }) => {
 	const resumeOrder = async e => {
 		e.preventDefault()
 		await axios
-			.post(`https://108.165.213.119:5000/api/order/resume/${activeOrder}`)
+			.post(`http://localhost:5000/api/order/resume/${activeOrder}`)
 			.then(res => {
 				setClosing(true)
 				handleChangeOpen()
@@ -86,9 +86,9 @@ const OrderDetails = ({ handleChangeOpen, activeOrder, setOrders, orders }) => {
 		setOther(true)
 		let orderId = order._id
 		axios
-			.post(`https://108.165.213.119:5000/api/generatepdf/${orderId}`, {})
+			.post(`http://localhost:5000/api/generatepdf/${orderId}`, {})
 			.then(() =>
-				axios.get(`https://108.165.213.119:5000/api/sendpdf/${orderId}`, {
+				axios.get(`http://localhost:5000/api/sendpdf/${orderId}`, {
 					responseType: 'blob',
 				})
 			)
@@ -108,7 +108,7 @@ const OrderDetails = ({ handleChangeOpen, activeOrder, setOrders, orders }) => {
 	useEffect(() => {
 		const getOrder = async () => {
 			await axios
-				.get(`https://108.165.213.119:5000/api/order/${activeOrder}`)
+				.get(`http://localhost:5000/api/order/${activeOrder}`)
 				.then(res => {
 					setOrder(res.data)
 					setLoading(false)

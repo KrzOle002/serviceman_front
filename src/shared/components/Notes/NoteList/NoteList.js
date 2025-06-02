@@ -13,7 +13,7 @@ const NoteList = () => {
 
 	const onSubmit = data => {
 		axios
-			.post('https://108.165.213.119:5000/api/note', data)
+			.post('http://localhost:5000/api/note', data)
 			.then(res => {
 				toast.success('Notatka utworzona')
 				getNotes()
@@ -26,7 +26,7 @@ const NoteList = () => {
 
 	const getNotes = () => {
 		axios
-			.get('https://108.165.213.119:5000/api/notes')
+			.get('http://localhost:5000/api/notes')
 			.then(res => {
 				setNotes(res.data)
 				setLoading(false)
@@ -39,7 +39,7 @@ const NoteList = () => {
 
 	const deleteNote = async noteId => {
 		await axios
-			.delete(`https://108.165.213.119:5000/api/note/${noteId}`)
+			.delete(`http://localhost:5000/api/note/${noteId}`)
 			.then(res => {
 				let newNotes = notes.filter(item => item._id !== noteId)
 				setNotes(newNotes)

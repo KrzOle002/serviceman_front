@@ -9,7 +9,7 @@ const CompanyList = ({ selectUser }) => {
 	const [loading, setLoading] = useState(true)
 	const getCompanies = () => {
 		axios
-			.get('https://108.165.213.119:5000/api/companyAll')
+			.get('http://localhost:5000/api/companyAll')
 			.then(res => {
 				setCompanies(res.data)
 				setLoading(false)

@@ -22,9 +22,9 @@ const AccountSettings = () => {
 	const saveAccountChanges = async data => {
 		setWorking(true)
 		await axios
-			.post('https://108.165.213.119:5000/api/company', data)
+			.post('http://localhost:5000/api/company', data)
 			.then(() => {
-				axios.get('https://108.165.213.119:5000/api/company').then(res => {
+				axios.get('http://localhost:5000/api/company').then(res => {
 					dispatch(userActions.setData(res.data.company))
 				})
 				toast.success('Zapisano')

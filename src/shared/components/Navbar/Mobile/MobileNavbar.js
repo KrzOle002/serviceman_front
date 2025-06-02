@@ -24,7 +24,7 @@ const MobileNavbar = () => {
 	}
 
 	const sendLogoutReq = async () => {
-		const res = await axios.post('http://108.165.213.119:5000/api/logout', null, {
+		const res = await axios.post('https://108.165.213.119:5000/api/logout', null, {
 			withCredentials: true,
 		})
 		if (res.status === 200) {

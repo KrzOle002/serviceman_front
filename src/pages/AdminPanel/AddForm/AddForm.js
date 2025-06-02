@@ -14,7 +14,7 @@ const AddForm = () => {
 
 	const addCompany = async data => {
 		await axios
-			.post('http://108.165.213.119:5000/api/signup', data)
+			.post('https://108.165.213.119:5000/api/signup', data)
 			.then(res => {
 				toast.success('Dodano')
 			})

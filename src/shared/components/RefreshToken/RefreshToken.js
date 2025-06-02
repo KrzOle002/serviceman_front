@@ -10,7 +10,7 @@ let firstRender = true
 const RefreshToken = () => {
 	const refreshToken = async () => {
 		const res = await axios
-			.get('http://192.168.206.71:5000/api/refresh', {
+			.get('http://108.165.213.119:5000/api/refresh', {
 				withCredentials: true,
 			})
 			.catch(() => toast.error('Błąd z odświeżeniem tokenu'))

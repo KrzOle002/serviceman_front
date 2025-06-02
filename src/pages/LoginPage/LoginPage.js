@@ -29,7 +29,7 @@ const LoginPage = () => {
 		setWorking(true)
 		try {
 			const res = await axios.post(
-				'http://192.168.206.71:5000/api/login',
+				'http://108.165.213.119:5000/api/login',
 				{
 					email: input.email,
 					password: input.password,

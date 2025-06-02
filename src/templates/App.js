@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 import StartContainer from '../shared/components/StartContainer/StartContainer'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
+import axios from 'axios'
 const App = () => {
 	const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
 
